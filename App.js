@@ -219,11 +219,11 @@
 
 // ****** Objects Destructuring and JASON API ********************
 
-const course = {
-    courseName: "JS",
-    price: "999",
-    courseInst: "Atul"
-}
+// const course = {
+//     courseName: "JS",
+//     price: "999",
+//     courseInst: "Atul"
+// }
 
 // ******* Destructuring ***********
 
@@ -263,11 +263,11 @@ const course = {
 // console.log(calculatorPrice(200, 400, 500));
 
 // passing objects in function.
-const user = {
-    name: "Atul",
-    course: "Prompt",
-    price: 199
-}
+// const user = {
+//     name: "Atul",
+//     course: "Prompt",
+//     price: 199
+// }
 
 
 // function handleObject (anyobject){
@@ -293,5 +293,371 @@ const user = {
 
 
 
-// ***** Globle and Local Scope ************
+// ***** Hoisting ************
 
+
+// we can call the function befor the function definition
+
+// console.log(addNum(2))
+
+// function addNum(){
+//     return num + 1
+// }
+
+
+//---> Hoistion below
+
+// addTwo(5)
+
+// const assTwo = function(){
+//     return num + 2
+// }
+
+
+// ++++++++ this and arrow function +++++++++++
+
+
+// const user ={
+//     username: "Atul",
+//     price: 999,
+
+//     welcomeMessage: function(){
+//         // we are accessing the username so we can't use directly we use this keyword for refering the current context. 
+//         console.log(`${this.username}, welcome to website`);
+//         console.log(this);
+//     }
+// }
+
+
+// user.welcomeMessage()
+// console.log("----------------------");
+// // here i change the context so now this keyword refering the current chnaged value.
+// user.username = "joy";
+// user.welcomeMessage()
+// console.log("----------------------");
+// console.log(this);
+
+
+
+// --------> 1st way.
+// function one(){
+//     let username = "Atul";
+//     // here this is printing undefined because the this keyword is not working in function. it is only work in objects.
+//     console.log(this.username);
+// }
+
+// one();
+// --------> 2nd way.
+// const one = function(){
+//     let username = "Atul";
+//     // here this is printing undefined because the this keyword is not working in function. it is only work in objects.
+//     console.log(this.username);
+// }
+// one();
+
+
+// -----> arrow function.
+
+// const one = ()=>{
+//     let username = "Atul";
+//     console.log(this.username);
+//     console.log(this);
+// }
+
+// one()
+
+// -----> basic arrow function
+
+// const arrFun = (num1, num2) =>{
+//     return num1 + num2
+// }
+
+// implisite return = it mean the return in same like ex given below no need to write return keyword -------->>
+
+// first way to write. 
+// const arrFun = (num1, num2) => num1 + num2;
+
+// Second way to write.
+// we use like this code in react so learm it.
+// const arrFun = (num1, num2) => (num1 + num2);
+
+// what if we have to return object. we have to wrap in ()paranthisies.
+
+// const arrFun = (num1, num2) => ({username: "Atul"});
+
+// console.log(arrFun());
+
+
+
+//++++++++++ Immediately invoked function Expressions (IIFE) +++++++++
+
+// globel scope ke pollution hota hai hame to tam IIFE ka use karna pasand karte hai .
+// the outer paranthesise is function definition for IIFE.
+// (function () {
+//     console.log(`DB connect`);
+// })(); //<--- excution call
+
+
+// // writing IIFE in whithout name, arrow funtion.
+// ( ()=>{
+//     console.log(`DB connect..1`);
+// }) ();
+
+
+// // passing argument in IIFE arrow function.
+
+// ( (name)=>{
+//     console.log(`DB ${name} connect..2`);
+// }) ("atul")
+
+// ++++++ Control Flow in JavaScript ++++++++++
+
+// if (true) {
+//     console.log("I am true")
+// }
+// if (false) {
+//     console.log("I am false")
+// }
+
+// falsy Values
+// false, 0, -0, BigInt 0n, "", null, undefined, NaN
+
+// truthy Values
+// true, "0", "false", " ", [], {}, function(){}
+
+// if (userEmail.length === 0){
+//     console.log("Array is empty");
+// }
+
+// const emptyObj = {}
+
+// if (Object.keys(emptyObj).length === 0){
+//     console.log("Object is empty");
+// }
+
+// ------ Nullish Coalescing Operator (??): null undefined
+
+// let val1;
+// val1 = 5 ?? 10
+
+// val2 = null ?? 10
+
+// console.log(val1);
+
+// console.log(val2);
+
+// Terniary Operator
+
+// condition ? true : false
+// const ice = 100;
+// ice >= 80 ? console.log("lelo") : console.log("mat lo")
+
+// ----> for loop break and continue ---------->>>>>>>
+
+// let myArr = [2,34,56,3,63,6,4];
+// for (let index = 0; index < myArr.length; index++) {
+//     const element = myArr[index];
+//     console.log(element);
+// }
+
+// +++++++ High Order array loops +++++++++++++++++++++++++++++++++
+
+
+// for OF loop ---------------->>>>>>>>>>>
+
+// const arr = [1,2,3,4];
+
+// for (const val of arr) {
+//     console.log(`value ${val}`);
+// }
+
+// const greeting = ["hello", "hi", "welcome", "Namaste"];
+
+// for (const greet of greeting) {
+//     console.log(`${greet}`);
+// }
+
+// Maps
+// const map = new Map();
+// map.set('IN', "India")
+// map.set('US', "United State")
+// map.set('FR', "France")
+
+// // console.log(map);
+// for (const [key, value] of map) {
+//     console.log(key, ':-', value);
+// }
+
+
+//  Object related work
+
+// const myObj = {
+//     js:"javaScript",
+//     cpp: "c++",
+//     rb: "ruby",
+//     swift: "swift by apple"
+// }
+
+
+// for (const key in myObj) {
+//     console.log(`${key}:${myObj[key]}`);
+// }
+
+
+// for in on array
+
+// const pro = ["js", "java", "py", "ruby","react"];
+
+// for (const key in pro) {
+//     console.log(`${key} : ${pro[key]}`);
+// }
+
+
+// for In loop on map
+
+// Maps is not itteratable
+// const map = new Map();
+// map.set('IN', "India")
+// map.set('US', "United State")
+// map.set('FR', "France")
+
+// for (const key in map) {
+//     console.log(key);
+// }
+
+
+// forEach loop
+
+// const pro = ["js", "java", "py", "ruby","react"];
+
+// using arrow function
+
+// pro.forEach(element => {
+//     console.log(element);
+// });
+
+// using classic function
+
+// pro.forEach(function (item){
+//     console.log(item);
+// })
+
+
+// other way
+
+// function printarr(item){
+//     console.log(item);
+// }
+
+// pro.forEach(printarr)
+
+// pro.forEach( (item, index, arr)=>{
+//     console.log(item, index, arr);
+// });
+
+// const myCoding = [
+//     {
+//         languagesName: "JavaScript",
+//         languagesFileName: "js"
+//     },
+//     {
+//         languagesName: "Python",
+//         languagesFileName: "py"
+//     },
+//     {
+//         languagesName: "Ruby",
+//         languagesFileName: "rb"
+//     }
+// ]
+
+// myCoding.forEach( (item)=>{
+//     console.log(item.languagesName);
+// })
+
+
+// +++++++++ Filter, Map and Reduce ++++++++++++++++
+
+// const myNums = [1,2,3,4,5,6,7,8,9,10]
+
+// // using filters
+
+// // const newNums = myNums.filter( (num)=> num > 4)
+
+// // const newNums = myNums.filter( (num)=> {
+// //     return num > 4
+// // })
+
+
+// // long way logic
+// // const newNums = [];
+// // myNums.forEach( (nums)=>{
+// //     if(nums > 4){
+// //         newNums.push(nums);
+// //     }
+// // })
+// // console.log(newNums);
+
+// const books = [
+//     {
+//         title: 'Book one', genre: 'Fiction', publish: 1987, edition: 1996
+//     },
+//     {
+//         title: 'Book two', genre: 'History', publish: 1987, edition: 2010
+//     },
+//     {
+//         title: 'Book three', genre: 'Science', publish: 1987, edition: 2014
+//     },
+//     {
+//         title: 'Book four', genre: 'Non-Fiction', publish: 1987, edition: 2010
+//     },
+//     {
+//         title: 'Book five', genre: 'Romantic', publish: 1987, edition: 2016
+//     },
+//     {
+//         title: 'Book Six', genre: 'Fiction', publish: 1987, edition: 1989
+//     }
+// ]
+
+
+// const showBook = books.filter( (bk) => bk.genre === 'Fiction')
+// console.log(showBook);
+// const pubDate = books.filter( (pbk) => pbk.edition === 2014)
+// console.log(pubDate);
+
+
+
+
+// ++++++++++++++ Map +++++++++++++++++++++++++++++++++
+
+// const myNums = [1,2,3,4,5,6,7,8,9,10]
+
+
+// const newNumsMap = myNums.map( (num)=> num + 10)
+
+//----------********** method chaining ************------------
+
+// const newNums = myNums
+//                         .map( (num) => num * 10)
+//                         .map( (num) => num + 1)
+//                         .filter( (num) => num >= 40)
+// console.log(newNums);
+
+
+
+// ---------********** Reduce **********------------- 
+
+// const myNums = [1,2,3,4,5,6]
+
+// // Classic Function
+// const myTol = myNums.reduce(function (acc, curr){
+//     return acc + curr
+// }, 1)
+
+// console.log(myTol);
+
+// // arrow function
+// const myTotal = myNums.reduce( (acc, curr) => {
+//     return acc + curr
+// }, 0)
+
+// console.log(myTotal);
