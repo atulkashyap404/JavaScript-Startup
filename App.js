@@ -251,3 +251,47 @@ const course = {
 //     "price": "free"
 // }
 
+
+// ****** Function and Parameters *********
+
+//  Rest Operator : it mean if we want to pass multiple value in function.
+
+// function calculatorPrice(...num1){
+//     return num1
+// }
+
+// console.log(calculatorPrice(200, 400, 500));
+
+// passing objects in function.
+const user = {
+    name: "Atul",
+    course: "Prompt",
+    price: 199
+}
+
+
+// function handleObject (anyobject){
+//     console.log(`username is ${anyobject.name} and price is ${anyobject.price}`);
+// }
+
+// handleObject(user);
+// we can pass object directly in function.
+// handleObject({
+//     name: "Atul",
+//     price: 199
+// })
+
+// Passing Array in Funtion.
+// const arr = [1,2,34,4,56,2];
+
+
+// function handleArr (anyArr){
+//     console.log(`My arra is ${anyArr} type of ${typeof anyArr}`);
+// }
+
+// handleArr(arr);
+
+
+
+// ***** Globle and Local Scope ************
+
